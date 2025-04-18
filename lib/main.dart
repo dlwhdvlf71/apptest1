@@ -1,37 +1,20 @@
- import 'package:flutter/material.dart'; //  필수로 가져와야 한다.
+import 'package:flutter/material.dart'; //  필수로 가져와야 한다.
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         primarySwatch: Colors.blue
       ),
-      home: MyHomePage(),
+      home: Grade(),
     );
   }
 }
@@ -57,5 +40,149 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+class MyCard extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Card Example'),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
+      ),
+      body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Hello'),
+              Text('Hello'),
+              Text('Hello'),
+              Text('Hello')
+            ],
+          ),
+      ),
+    );
+  }
+}
 
+class Grade extends StatelessWidget {
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 231, 174, 1),
+      appBar: AppBar(
+        title: Text('BBANTO'),
+        backgroundColor: const Color.fromARGB(255, 252, 202, 51),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/flutter_character_bounce_avatar.gif'),
+                radius: 60.0,
+              ),
+            ),
+            Divider(
+              height: 60.0,
+              color: const Color.fromARGB(87, 158, 158, 158),
+              thickness: 2.0,
+              endIndent: 30.0,
+            ),
+            Text('NAME',
+            style: TextStyle(
+              color: Colors.white,
+              letterSpacing: 2.0,
+              fontSize: 12.0,
+              fontWeight: FontWeight.bold
+              ),
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Text('BBANTO',
+            style: TextStyle(
+              color: Colors.white,
+              letterSpacing: 2.0,
+              fontSize: 28.0,
+              fontWeight: FontWeight.bold
+            ),),
+            SizedBox(
+              height: 30.0,
+            ),
+            Text('POWER LEVEL',
+            style: TextStyle(
+              color: Colors.white,
+              letterSpacing: 2.0,
+              fontSize: 12.0,
+              fontWeight: FontWeight.bold
+              ),
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Text('14',
+            style: TextStyle(
+              color: Colors.white,
+              letterSpacing: 2.0,
+              fontSize: 28.0,
+              fontWeight: FontWeight.bold
+            ),),
+            SizedBox(
+              height: 30.0,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.check_circle_outline
+                ),
+                SizedBox(width: 10.0,),
+                Text('using lightsaber',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  letterSpacing: 1.0
+                ),)
+              ],
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.check_circle_outline
+                ),
+                SizedBox(width: 10.0,),
+                Text('face hero tattoo',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  letterSpacing: 1.0
+                ),)
+              ],
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.check_circle_outline
+                ),
+                SizedBox(width: 10.0,),
+                Text('Ice bluster',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  letterSpacing: 1.0
+                ),)
+              ],
+            ),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/image1.png'),
+                radius: 40.0,
+                backgroundColor: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
