@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart'; //  필수로 가져와야 한다.
 
 void main() {
-  runApp(MyApp());
+  runApp(MyApp2());
 }
 
 class MyApp extends StatelessWidget {
@@ -186,3 +186,57 @@ class Grade extends StatelessWidget {
     );
   }
 }
+
+class MyApp2 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    
+    // TODO: implement build
+    return MaterialApp(
+      title: 'Appbar',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.red
+      ),
+      home: MyPage(),
+    );
+  }
+}
+
+class MyPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Appbar icon Menu'),
+        centerTitle: true,
+        elevation: 0.0,
+        leading: IconButton(
+          icon: Icon(Icons.menu), 
+          onPressed: () {
+            print('menu icon clicked');
+            },
+        ),
+        actions: [
+          IconButton(
+          icon: Icon(Icons.shopping_cart), 
+          onPressed: () {
+            print('shopping cart icon clicked');
+            },
+        ),IconButton(
+          icon: Icon(Icons.shopping_bag), 
+          onPressed: () {
+            print('shopping bag icon clicked');
+            },
+        ),
+        ],
+      ),
+    );
+     
+  }
+}
+
+
+
+
