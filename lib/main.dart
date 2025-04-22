@@ -211,13 +211,7 @@ class MyPage extends StatelessWidget{
       appBar: AppBar(
         title: Text('Appbar icon Menu'),
         centerTitle: true,
-        elevation: 0.0,
-        leading: IconButton(
-          icon: Icon(Icons.menu), 
-          onPressed: () {
-            print('menu icon clicked');
-            },
-        ),
+      
         actions: [
           IconButton(
           icon: Icon(Icons.shopping_cart), 
@@ -231,6 +225,31 @@ class MyPage extends StatelessWidget{
             },
         ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/image2.png'),
+                backgroundColor: Colors.white,
+              ),
+              accountName: Text('BBANTO'),
+              accountEmail: Text('bbanto@email.com'),
+              onDetailsPressed: () {
+                print('arrow icon clicked');
+              },
+              decoration: BoxDecoration(
+                color: Colors.red[200],
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(40.0),
+                  bottomRight: Radius.circular(40.0),
+                )
+              ),
+            )
+          ],
+        ),
       ),
     );
      
