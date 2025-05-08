@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        primarySwatch: Colors.blue
+        primarySwatch: Colors.blue,
       ),
       home: Grade(),
     );
@@ -22,25 +22,22 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter Demo Home Page'),
+      appBar: AppBar(title: Text('Flutter Demo Home Page')),
+      body: Center(
+        child: Column(
+          children: [
+            Text("Hello World"),
+            Text("Hello World"),
+            Text("Hello World"),
+          ],
         ),
-        body: Center(
-          child: Column(
-            children: [
-              Text("Hello World"),
-              Text("Hello World"),
-              Text("Hello World")
-            ],
-          ),
-        ),
+      ),
     );
   }
 }
 
-class MyCard extends StatelessWidget{
+class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,21 +48,20 @@ class MyCard extends StatelessWidget{
       ),
       body: Center(
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Hello'),
-              Text('Hello'),
-              Text('Hello'),
-              Text('Hello')
-            ],
-          ),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Hello'),
+            Text('Hello'),
+            Text('Hello'),
+            Text('Hello'),
+          ],
+        ),
       ),
     );
   }
 }
 
 class Grade extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +78,9 @@ class Grade extends StatelessWidget {
           children: [
             Center(
               child: CircleAvatar(
-                backgroundImage: AssetImage('assets/flutter_character_bounce_avatar.gif'),
+                backgroundImage: AssetImage(
+                  'assets/flutter_character_bounce_avatar.gif',
+                ),
                 radius: 60.0,
               ),
             ),
@@ -92,85 +90,74 @@ class Grade extends StatelessWidget {
               thickness: 2.0,
               endIndent: 30.0,
             ),
-            Text('NAME',
-            style: TextStyle(
-              color: Colors.white,
-              letterSpacing: 2.0,
-              fontSize: 12.0,
-              fontWeight: FontWeight.bold
+            Text(
+              'NAME',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontSize: 12.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
-              height: 5.0,
-            ),
-            Text('BBANTO',
-            style: TextStyle(
-              color: Colors.white,
-              letterSpacing: 2.0,
-              fontSize: 28.0,
-              fontWeight: FontWeight.bold
-            ),),
-            SizedBox(
-              height: 30.0,
-            ),
-            Text('POWER LEVEL',
-            style: TextStyle(
-              color: Colors.white,
-              letterSpacing: 2.0,
-              fontSize: 12.0,
-              fontWeight: FontWeight.bold
+            SizedBox(height: 5.0),
+            Text(
+              'BBANTO',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
-              height: 5.0,
+            SizedBox(height: 30.0),
+            Text(
+              'POWER LEVEL',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontSize: 12.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            Text('14',
-            style: TextStyle(
-              color: Colors.white,
-              letterSpacing: 2.0,
-              fontSize: 28.0,
-              fontWeight: FontWeight.bold
-            ),),
-            SizedBox(
-              height: 30.0,
+            SizedBox(height: 5.0),
+            Text(
+              '14',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
+            SizedBox(height: 30.0),
             Row(
               children: [
-                Icon(
-                  Icons.check_circle_outline
+                Icon(Icons.check_circle_outline),
+                SizedBox(width: 10.0),
+                Text(
+                  'using lightsaber',
+                  style: TextStyle(fontSize: 16.0, letterSpacing: 1.0),
                 ),
-                SizedBox(width: 10.0,),
-                Text('using lightsaber',
-                style: TextStyle(
-                  fontSize: 16.0,
-                  letterSpacing: 1.0
-                ),)
               ],
             ),
             Row(
               children: [
-                Icon(
-                  Icons.check_circle_outline
+                Icon(Icons.check_circle_outline),
+                SizedBox(width: 10.0),
+                Text(
+                  'face hero tattoo',
+                  style: TextStyle(fontSize: 16.0, letterSpacing: 1.0),
                 ),
-                SizedBox(width: 10.0,),
-                Text('face hero tattoo',
-                style: TextStyle(
-                  fontSize: 16.0,
-                  letterSpacing: 1.0
-                ),)
               ],
             ),
             Row(
               children: [
-                Icon(
-                  Icons.check_circle_outline
+                Icon(Icons.check_circle_outline),
+                SizedBox(width: 10.0),
+                Text(
+                  'Ice bluster',
+                  style: TextStyle(fontSize: 16.0, letterSpacing: 1.0),
                 ),
-                SizedBox(width: 10.0,),
-                Text('Ice bluster',
-                style: TextStyle(
-                  fontSize: 16.0,
-                  letterSpacing: 1.0
-                ),)
               ],
             ),
             Center(
@@ -187,43 +174,42 @@ class Grade extends StatelessWidget {
   }
 }
 
-class MyApp2 extends StatelessWidget{
+class MyApp2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
     // TODO: implement build
     return MaterialApp(
       title: 'Appbar',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        primarySwatch: Colors.red
+        primarySwatch: Colors.red,
       ),
-      home: MyPage(),
+      home: SanckbarPage(),
     );
   }
 }
 
-class MyPage extends StatelessWidget{
+class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         title: Text('Appbar icon Menu'),
         centerTitle: true,
-      
+
         actions: [
           IconButton(
-          icon: Icon(Icons.shopping_cart), 
-          onPressed: () {
-            print('shopping cart icon clicked');
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () {
+              print('shopping cart icon clicked');
             },
-        ),IconButton(
-          icon: Icon(Icons.shopping_bag), 
-          onPressed: () {
-            print('shopping bag icon clicked');
+          ),
+          IconButton(
+            icon: Icon(Icons.shopping_bag),
+            onPressed: () {
+              print('shopping bag icon clicked');
             },
-        ),
+          ),
         ],
       ),
       drawer: Drawer(
@@ -245,17 +231,45 @@ class MyPage extends StatelessWidget{
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40.0),
                   bottomRight: Radius.circular(40.0),
-                )
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),
     );
-     
   }
 }
 
-
-
-
+class SanckbarPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Snack Bar'), centerTitle: true),
+      body: Builder(
+        builder: (BuildContext ctx) {
+          return Center(
+            child: TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.redAccent,
+                padding: EdgeInsets.all(20.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+              ),
+              onPressed: () {
+                ScaffoldMessenger.of(
+                  ctx,
+                ).showSnackBar(SnackBar(content: Text('Hello')));
+              },
+              child: Text(
+                'Show Snack Bar',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
